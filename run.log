@@ -1,0 +1,29 @@
+2017-03-22 15:19:13 utils.py[line:11] INFO select web driver name is wrong
+2017-03-22 16:49:34 utils.py[line:11] INFO yama login success
+2017-03-22 16:49:35 utils.py[line:11] INFO 24hours url work success
+2017-03-22 17:37:04 utils.py[line:11] INFO yama login success
+2017-03-22 17:37:05 utils.py[line:11] INFO 24hours url work success
+2017-03-22 17:37:05 utils.py[line:11] INFO daily url action work success
+2017-03-22 17:37:44 utils.py[line:11] INFO search php success
+2017-03-22 17:37:45 utils.py[line:11] INFO search php success
+2017-03-22 17:52:54 utils.py[line:11] INFO yama login success
+2017-03-22 17:52:54 utils.py[line:11] INFO 24hours url work success
+2017-03-22 17:52:55 utils.py[line:11] INFO daily url action work success
+2017-03-22 17:53:07 utils.py[line:11] INFO search php success
+2017-03-22 17:53:08 utils.py[line:11] INFO search php success
+2017-03-22 20:27:05 utils.py[line:12] INFO new count num : 21
+2017-03-22 20:41:30 utils.py[line:12] INFO new count num : 21
+2017-03-22 20:43:07 utils.py[line:12] INFO new count num : 21
+2017-03-23 10:04:03 utils.py[line:12] INFO new count num : 26
+2017-03-23 11:06:45 utils.py[line:12] INFO bi login failed
+2017-03-23 11:09:24 utils.py[line:12] INFO bi login success
+2017-03-23 11:16:44 utils.py[line:12] INFO bi login success
+2017-03-23 12:09:43 utils.py[line:12] INFO bi login success
+2017-03-23 15:05:41 utils.py[line:12] INFO new count num : 6
+2017-03-23 15:10:09 utils.py[line:12] INFO cnblog search work failed
+2017-03-23 15:10:10 utils.py[line:12] INFO ShotSave:20170323151010.png
+2017-03-23 15:10:10 utils.py[line:12] INFO Shot/.pngfile is not exist
+2017-03-23 15:23:05,960 utils.py[line:31] INFO cnblog search work succes
+2017-03-23 15:23:07,132 utils.py[line:31] INFO Save File :20170323152307.pngsuccess
+2017-03-23 15:23:07,132 utils.py[line:31] INFO Save File :20170323152307.pngsuccess
+2017-03-23 15:27:31,167 utils.py[line:31] INFO cnblog search work succes
