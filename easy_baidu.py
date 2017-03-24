@@ -27,7 +27,6 @@ class Easy_Baidu(base_easy.Base_Easy):
                 else:
                         msg = "search php success"
 
-                print  msg
                 utils.record_log(msg)
 
         def search_php(self):
@@ -37,7 +36,6 @@ class Easy_Baidu(base_easy.Base_Easy):
                 else:
                         msg = "search php success"
 
-                print  msg
                 utils.record_log(msg)
 
         def run_jobs(self):

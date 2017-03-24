@@ -26,4 +26,33 @@
 2017-03-23 15:23:05,960 utils.py[line:31] INFO cnblog search work succes
 2017-03-23 15:23:07,132 utils.py[line:31] INFO Save File :20170323152307.pngsuccess
 2017-03-23 15:23:07,132 utils.py[line:31] INFO Save File :20170323152307.pngsuccess
-2017-03-23 15:27:31,167 utils.py[line:31] INFO cnblog search work succes
+2017-03-23 15:27:31,167 utils.py[line:31] INFO cnblog search work succes2017-03-24 14:09:17,911 utils.py[line:38] INFO yama login failed
+2017-03-24 14:09:18,818 utils.py[line:38] INFO 24hours url work failed
+2017-03-24 14:09:20,115 utils.py[line:38] INFO Shot/20170324140920.png save success
+2017-03-24 14:12:10,690 utils.py[line:38] INFO yama login failed
+2017-03-24 14:12:11,230 utils.py[line:38] INFO 24hours url work failed
+2017-03-24 14:12:12,453 utils.py[line:38] INFO Shot/20170324141212.png save success
+2017-03-24 14:16:24,398 utils.py[line:38] INFO yama login success
+2017-03-24 14:16:25,125 utils.py[line:38] INFO 24hours url work success
+2017-03-24 14:16:26,341 utils.py[line:38] INFO Shot/20170324141626.png save success
+2017-03-24 14:16:27,894 utils.py[line:38] INFO qiniu upload file_path success
+2017-03-24 14:16:27,895 utils.py[line:38] INFO upload yama 24 hours success
+2017-03-24 14:16:28,890 utils.py[line:38] INFO daily url action work success
+2017-03-24 14:16:28,907 utils.py[line:38] INFO Shot/20170324141628.png save success
+2017-03-24 14:16:29,578 utils.py[line:38] INFO qiniu upload file_path success
+2017-03-24 14:16:29,578 utils.py[line:38] INFO upload yama 24 hours success
+2017-03-24 17:42:13,674 utils.py[line:38] INFO send email success
+2017-03-24 17:43:20,822 utils.py[line:38] INFO send email success
+2017-03-24 18:28:58,411 utils.py[line:38] INFO send email success
+2017-03-24 18:29:31,122 utils.py[line:38] INFO send email success
+2017-03-24 18:29:46,451 utils.py[line:38] INFO send email success
+2017-03-24 18:32:23,436 utils.py[line:38] INFO send email success
+2017-03-24 18:37:37,012 utils.py[line:38] INFO send email failed
+2017-03-24 18:37:42,934 utils.py[line:38] INFO send email failed
+2017-03-24 18:37:48,148 utils.py[line:38] INFO send email failed
+2017-03-24 18:40:53,075 utils.py[line:38] INFO send email failed
+2017-03-24 18:41:28,828 utils.py[line:38] INFO send email failed
+2017-03-24 18:43:32,174 utils.py[line:38] INFO send email failed
+2017-03-24 19:43:06,996 utils.py[line:38] INFO send email failed 
+2017-03-24 19:44:41,312 utils.py[line:38] INFO send email failed 
+2017-03-24 19:45:19,569 utils.py[line:38] INFO send email failed 

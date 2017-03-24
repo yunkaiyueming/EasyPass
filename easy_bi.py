@@ -5,12 +5,12 @@ import base_easy
 
 
 class Easy_Bi(base_easy.Base_Easy):
-        siteurl = "xx"
-        cas_login_url = 'xx'
+        siteurl = ''
+        cas_login_url = ''
         is_login = False
 
-        login_user = "xx"
-        login_pwd = "xx"
+        login_user = ""
+        login_pwd = ""
 
         login_btn_id = "cas_login_btn"
         login_user_id = "username"
@@ -41,7 +41,6 @@ class Easy_Bi(base_easy.Base_Easy):
                         self.is_login = False
                         msg = "bi login failed"
                 utils.record_log(msg)
-                print msg
 
         def check_login(self):
                 if not self.is_login:
@@ -60,12 +59,10 @@ class Easy_Bi(base_easy.Base_Easy):
         def test_windows(self):
                 self.driver.get(self.siteurl)
                 for handle in self.driver.window_handles:
-                        print handle
                         self.driver.switch_to_window(handle)
 
                 self.driver.get(self.cas_login_url)
                 for handle in self.driver.window_handles:
-                        print handle
                         self.driver.switch_to_window(handle)
 
         def get_window_info(self):

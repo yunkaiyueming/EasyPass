@@ -2,11 +2,21 @@
 
 import base_easy
 import utils
-
+import ConfigParser
+import json
 
 class Easy_Zhihu(base_easy.Base_Easy):
         siteurl = "xx"
         login_cookies = {}
+
+        def __init__(self):
+                base_easy.Base_Easy.__init__(self)
+                cf = ConfigParser.ConfigParser()
+                cf.read('./config.ini')
+
+                self.siteurl = cf.get('zhihu', 'siteurl')
+                login_cookie_json = cf.get('zhihu', 'login_cookie_json')
+                self.login_cookies = json.loads(login_cookie_json, encoding="utf8");
 
         def login_zhihu(self):
                 pass
@@ -32,4 +42,4 @@ class Easy_Zhihu(base_easy.Base_Easy):
 
         if __name__ == '__main__':
                 import easy_zhihu
-                easy_zhihu.Easy_Zhihu().run_jobs()
+                easy_zhihu.Easy_Zhihu()

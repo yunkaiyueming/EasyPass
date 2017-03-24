@@ -3,18 +3,29 @@
 import base_easy
 from selenium.webdriver.common.keys import Keys
 import utils
+import ConfigParser
 
 
 class Easy_Yama(base_easy.Base_Easy):
-        siteurl = "xx"
-        site_title = "xx"
+        siteurl = ""
+        site_title = ""
         is_login = False
-        login_user = "xx"
-        login_pwd = "xx"
+        login_user = ""
+        login_pwd = ""
 
         login_btn_id = "cas_login_btn"
         login_user_id = "username"
         login_pwd_id = "password"
+
+        def __init__(self):
+                base_easy.Base_Easy.__init__(self)
+
+                cf = ConfigParser.ConfigParser()
+                cf.read('./config.ini')
+                self.login_user = cf.get('login_account', 'login_user')
+                self.login_pwd = cf.get('login_account', 'login_pwd')
+                self.siteurl = cf.get('yama', 'siteurl')
+                self.site_title = cf.get('yama', 'site_title')
 
         def login_yama(self):
                 self.default_action()
@@ -32,10 +43,9 @@ class Easy_Yama(base_easy.Base_Easy):
                         msg = "yama login success"
                         self.is_login = True
                 else:
-                        self.is_login = False
                         msg = "yama login failed"
+                        self.is_login = False
                 utils.record_log(msg)
-                print msg
 
         def check_login(self):
                 if not self.is_login:
@@ -49,7 +59,6 @@ class Easy_Yama(base_easy.Base_Easy):
                 else:
                         msg = "24hours url work failed"
                 utils.record_log(msg)
-                print msg
 
         def visit_url_action(self):
                 self.check_login()
@@ -59,8 +68,16 @@ class Easy_Yama(base_easy.Base_Easy):
                 else:
                         msg = "daily url action work failed"
                 utils.record_log(msg)
-                print msg
 
         def run_jobs(self):
                 self.visit_24hours_url_view()
+                self.save_and_uload_snapshot()
+                utils.record_log('upload yama 24 hours success')
+
                 self.visit_url_action()
+                self.save_and_uload_snapshot()
+                utils.record_log('upload yama 24 hours success')
+
+if __name__=='__main__':
+        import easy_yama
+        easy_yama.Easy_Yama().run_jobs()

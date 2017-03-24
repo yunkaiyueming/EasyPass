@@ -3,7 +3,6 @@
 import base_easy
 import utils
 from selenium.webdriver.common.keys import Keys
-import qiniu_help
 
 
 class Easy_Cnblogs(base_easy.Base_Easy):
