@@ -65,7 +65,3 @@ def __add_snapshot_img(total_msg, snapshot_imgs):
         msgAlternative.attach(MIMEText(view_mail_msg, 'html', 'utf-8'))
         total_msg.attach(msgAlternative)
         return total_msg
-
-
-shot_imgs = ['Shot/20170323152307.png', 'Shot/20170323183520.png']
-send_mail_with_snapshot("warn data", snapshot_imgs=shot_imgs, attach_file='run.log')

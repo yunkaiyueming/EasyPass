@@ -40,6 +40,6 @@ class Easy_Zhihu(base_easy.Base_Easy):
         def run_jobs(self):
                 self.save_snot_img()
 
-        if __name__ == '__main__':
-                import easy_zhihu
-                easy_zhihu.Easy_Zhihu()
+if __name__ == '__main__':
+        import easy_zhihu
+        easy_zhihu.Easy_Zhihu().run_jobs()
