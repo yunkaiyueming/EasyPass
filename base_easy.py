@@ -12,8 +12,8 @@ class Base_Easy():
         site_title = ""
         driver = ""
 
-        def __init__(self):
-                self.select_driver_adapter()
+        def __init__(self, driver_name=""):
+                self.select_driver_adapter(driver_name)
 
         def default_action(self):
                 self.driver.get(self.siteurl)
@@ -31,6 +31,9 @@ class Base_Easy():
                         self.driver = webdriver.Firefox()
                 elif select_driver_name.lower() == "chrome":
                         self.driver = webdriver.Chrome()
+                elif select_driver_name.lower() == "phantomjs":
+                        self.driver = webdriver.PhantomJS(
+                                executable_path=r'D:\phantomjs\phantomjs-2.1.1-windows\bin\phantomjs.exe')
                 else:
                         utils.record_log("select web driver name is wrong")
                         self.driver = ""
@@ -55,3 +58,9 @@ class Base_Easy():
                         qiniu_help.upload_file(local_file_path, save_name)
                 else:
                         utils.record_log(local_file_path + "file is not exist")
+
+        def get_page_response_time(self, view_url):
+                start_time = time.time()
+                self.driver.get(view_url)
+                end_time = time.time()
+                return end_time - start_time

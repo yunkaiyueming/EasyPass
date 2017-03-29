@@ -2,6 +2,7 @@
 
 import utils
 import base_easy
+import ConfigParser
 
 
 class Easy_Bi(base_easy.Base_Easy):
@@ -16,9 +17,21 @@ class Easy_Bi(base_easy.Base_Easy):
         login_user_id = "username"
         login_pwd_id = "password"
 
+        def __init__(self):
+                base_easy.Base_Easy.__init__(self, 'phantomjs')
+
+                cf = ConfigParser.ConfigParser()
+                cf.read('./config.ini.bk')
+                self.login_user = cf.get('login_account', 'login_user')
+                self.login_pwd = cf.get('login_account', 'login_pwd')
+                self.siteurl = cf.get('bi', 'siteurl')
+                self.site_title = cf.get('bi', 'site_title')
+                self.applist_url = cf.get('bi', 'applist_url')
+                self.boss_month_cost_url = cf.get('bi', 'boss_month_cost_url')
+
         def home_page_login(self):
                 self.driver.get(self.siteurl)
-                login_btn = self.driver.find_element_by_partial_link_text("ss")
+                login_btn = self.driver.find_element_by_partial_link_text("统一账户登录")
                 login_btn.click()
 
         def cas_login(self):
@@ -49,9 +62,15 @@ class Easy_Bi(base_easy.Base_Easy):
         def some_game_applist_snapshot(self):
                 self.check_login()
 
-                applist_url = 'tt'
-                self.driver.get(applist_url)
+                self.driver.get(self.applist_url)
                 self.save_snapshot()
+
+        def get_boss_month_user_response_time(self):
+                self.check_login()
+
+                print self.boss_month_cost_url
+                resp_time = self.get_page_response_time(self.boss_month_cost_url)
+                print "boss big view time:", resp_time
 
         def run_jobs(self):
                 self.some_game_applist_snapshot()
@@ -82,4 +101,4 @@ class Easy_Bi(base_easy.Base_Easy):
 
         if __name__ == '__main__':
                 import easy_bi
-                easy_bi.Easy_Bi().scroll_window()
+                easy_bi.Easy_Bi().get_boss_month_user_response_time()

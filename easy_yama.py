@@ -69,6 +69,9 @@ class Easy_Yama(base_easy.Base_Easy):
                         msg = "daily url action work failed"
                 utils.record_log(msg)
 
+        def get_page_time(self):
+                self.driver.execute_script('page_load2.js')
+
         def run_jobs(self):
                 self.visit_24hours_url_view()
                 self.save_and_uload_snapshot()
@@ -78,6 +81,8 @@ class Easy_Yama(base_easy.Base_Easy):
                 self.save_and_uload_snapshot()
                 utils.record_log('upload yama 24 hours success')
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
         import easy_yama
-        easy_yama.Easy_Yama().run_jobs()
+
+        easy_yama.Easy_Yama().get_page_time()
