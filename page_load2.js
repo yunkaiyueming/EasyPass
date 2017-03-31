@@ -1,6 +1,6 @@
 var page = require('webpage').create();
 page.settings.userAgent = 'EasyPass';
-var url = 'http://bi.rayjoy.com/bi_xhc/boss/user_view/view';
+var url = 'http://www.baidu.com';
 t = Date.now()
 page.open(url, function(status) {
     console.log(status)
