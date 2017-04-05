@@ -24,14 +24,14 @@ def send_mail_with_snapshot(content, subject='WarnNotice', snapshot_imgs='', att
 
         message = MIMEMultipart()
         message['From'] = Header("EasyPass机器人", 'utf-8')
-        #message['To'] = Header(''接收组, 'utf-8')
+        #message['To'] = Header('接收组', 'utf-8')
         message['Subject'] = Header(subject, 'utf-8')
         message.attach(MIMEText(content, 'html', 'utf-8'))
 
         if attach_file:
                 att = MIMEText(open(attach_file, 'rb').read(), 'base64', 'utf-8')
                 att["Content-Type"] = 'application/octet-stream'
-                att["Content-Disposition"] = 'attachment; filename="'+attach_file+'"'
+                att["Content-Disposition"] = 'attachment; filename="' + attach_file + '"'
                 message.attach(att)
 
         message = __add_snapshot_img(message, snapshot_imgs)
@@ -43,8 +43,8 @@ def send_mail_with_snapshot(content, subject='WarnNotice', snapshot_imgs='', att
 
                 utils.record_log("send email success")
                 return True
-        except smtplib.SMTPException,e:
-                utils.record_log("send email failed "+e.message)
+        except smtplib.SMTPException, e:
+                utils.record_log("send email failed " + e.message)
                 return False
 
 
