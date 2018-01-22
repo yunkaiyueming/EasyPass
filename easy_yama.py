@@ -85,4 +85,4 @@ class Easy_Yama(base_easy.Base_Easy):
 if __name__ == '__main__':
         import easy_yama
 
-        easy_yama.Easy_Yama().get_page_time()
+        easy_yama.Easy_Yama().run_jobs()

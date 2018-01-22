@@ -18,7 +18,7 @@ class Easy_Bi(base_easy.Base_Easy):
         login_pwd_id = "password"
 
         def __init__(self):
-                base_easy.Base_Easy.__init__(self, 'phantomjs')
+                base_easy.Base_Easy.__init__(self)
 
                 cf = ConfigParser.ConfigParser()
                 cf.read('./config.ini.bk')
@@ -63,7 +63,7 @@ class Easy_Bi(base_easy.Base_Easy):
                 self.check_login()
 
                 self.driver.get(self.applist_url)
-                self.save_snapshot()
+                self.save_and_uload_snapshot(width=1500,height=1500)
 
         def get_boss_month_user_response_time(self):
                 self.check_login()
@@ -71,9 +71,6 @@ class Easy_Bi(base_easy.Base_Easy):
                 print self.boss_month_cost_url
                 resp_time = self.get_page_response_time(self.boss_month_cost_url)
                 print "boss big view time:", resp_time
-
-        def run_jobs(self):
-                self.some_game_applist_snapshot()
 
         def test_windows(self):
                 self.driver.get(self.siteurl)
@@ -99,6 +96,9 @@ class Easy_Bi(base_easy.Base_Easy):
 
                 self.driver.create_options()
 
+        def run_jobs(self):
+                self.some_game_applist_snapshot()
+
         if __name__ == '__main__':
                 import easy_bi
-                easy_bi.Easy_Bi().get_boss_month_user_response_time()
+                easy_bi.Easy_Bi().run_jobs()

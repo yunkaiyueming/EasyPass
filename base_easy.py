@@ -30,7 +30,11 @@ class Base_Easy():
                 if select_driver_name.lower() == "firefox":
                         self.driver = webdriver.Firefox()
                 elif select_driver_name.lower() == "chrome":
-                        self.driver = webdriver.Chrome()
+                        from selenium.webdriver.chrome.options import Options
+                        chrome_options = Options()
+                        chrome_options.add_argument("--disable-extensions")
+                        self.driver = webdriver.Chrome(chrome_options=chrome_options)
+                       #self.driver = webdriver.Chrome()
                 elif select_driver_name.lower() == "phantomjs":
                         self.driver = webdriver.PhantomJS(
                                 executable_path=r'D:\phantomjs\phantomjs-2.1.1-windows\bin\phantomjs.exe')
@@ -39,7 +43,7 @@ class Base_Easy():
                         self.driver = ""
 
         def save_snapshot(self, save_name="", width=1000, height=1000):
-                self.driver.set_window_size(width, height)
+                #self.driver.set_window_size(width, height)
                 if not save_name:
                         save_name = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
 
